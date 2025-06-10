@@ -28,7 +28,7 @@ description: "Hi, I'm Juha"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://imgolden77.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
-github_username:  ""
+github_username: ""
 
 # Build settings
 theme: minima
