@@ -1,4 +1,12 @@
-{% highlight ruby %} class Linear(nn.Linear):
+---
+layout: post
+title: "Transformer-Attention is all you need"
+date: 2025-06-23 12:00:00 +0900
+categories: jekyll githubpages
+---
+
+{% highlight ruby %} 
+class Linear(nn.Linear):
     def __init__(self, in_features, out_features, bias=True, device='cpu', dtype=None):
         super().__init__(in_features, out_features, bias=bias)
         self.register_buffer('u', nn.functional.normalize(torch.randn(in_features), dim=0))
@@ -27,5 +35,6 @@
         return weight
 
     def forward(self, x):
-        return nn.functional.linear(x, self.get_weight(), self.bias) {% endhighlight %}
+        return nn.functional.linear(x, self.get_weight(), self.bias) 
+{% endhighlight %}
 
