@@ -5,6 +5,8 @@ date: 2025-06-23 12:00:00 +0900
 categories: jekyll githubpages
 ---
 
+transformer 공부 중 
+
 {% highlight ruby %} 
 class Linear(nn.Linear):
     def __init__(self, in_features, out_features, bias=True, device='cpu', dtype=None):
