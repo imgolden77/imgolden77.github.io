@@ -33,7 +33,7 @@ The plugin takes as input the path to the notebook, but it assumes the file exis
 
 {::nomarkdown}
 {% assign jupyter_path = "assets/jupyter/blog.ipynb" | relative_url %}
-{% capture notebook_exists %}{% file_exists assets/jupyter/blog.ipynb %}{% endcapture %}
+{% capture notebook_exists %}{% endcapture %}
 {% if notebook_exists == "true" %}
 {% jupyter_notebook jupyter_path %}
 {% else %}
