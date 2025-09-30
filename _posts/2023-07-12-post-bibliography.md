@@ -12,11 +12,9 @@ related_publications: true
 
 This post shows how to add bibliography to simple blog posts. We support every citation style that [jekyll-scholar](https://github.com/inukshuk/jekyll-scholar) does. That means simple citation like, multiple citations like, long references like or also quotes:
 
-{% quote einstein1905electrodynamics %}
 Lorem ipsum dolor sit amet, consectetur adipisicing elit,
 sed do eiusmod tempor.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing.
-{% endquote %}
 
 If you would like something more academic, check the [distill style post]({% post_url 2018-12-22-distill %}).
