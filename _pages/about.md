@@ -6,7 +6,7 @@ subtitle: MSc Advanced CS @ University of Manchester
 
 profile:
   align: right
-  image: /assets/images/prof_pic.jpg
+  image: /assets/img/prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
 
