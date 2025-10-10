@@ -2,6 +2,60 @@
 layout: default
 ---
 
+{% comment %} Show video (if provided) above the PDF. Video priority: video_html -> video_url -> video_local. Always render the PDF below. {% endcomment %}
+
+{% assign has_video = false %}
+{% if page.video_html or page.video_url or page.video_local %}
+  {% assign has_video = true %}
+{% endif %}
+
+{%- assign thesis_title = page.thesis_title | default: page.title -%}
+{% if thesis_title %}
+  <h2 class="thesis-title" style="font-size:1.5rem; text-align:center; margin:0.5rem 0; font-weight:600;">{{ thesis_title }}</h2>
+{% endif %}
+
+{% if has_video %}
+  <div class="thesis-video" style="margin-bottom:1rem;">
+    {% if page.video_html %}
+      {{ page.video_html }}
+
+    {% elsif page.video_url %}
+      {% assign url = page.video_url %}
+      {% if url contains 'youtube.com' or url contains 'youtu.be' %}
+        {% capture yt_id %}
+          {% if url contains 'v=' %}
+            {{ url | split: 'v=' | last | split: '&' | first }}
+          {% elsif url contains 'youtu.be/' %}
+            {{ url | split: 'youtu.be/' | last | split: '?' | first }}
+          {% endif %}
+        {% endcapture %}
+        <div class="video-embed" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+          <iframe src="https://www.youtube.com/embed/{{ yt_id | strip }}" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+        </div>
+
+      {% elsif url contains 'vimeo.com' %}
+        {% capture vm_id %}{{ url | split: '/' | last | split: '?' | first }}{% endcapture %}
+        <div class="video-embed" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+          <iframe src="https://player.vimeo.com/video/{{ vm_id | strip }}" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+        </div>
+
+      {% else %}
+        <div class="video-embed" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+          <iframe src="{{ url | escape }}" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+        </div>
+      {% endif %}
+
+    {% elsif page.video_local %}
+      <video controls width="100%" style="max-height:480px;display:block;">
+        <source src="{{ page.video_local | relative_url }}">
+        Your browser does not support the video tag.
+      </video>
+    {% endif %}
+  </div>
+{% endif %}
+
+{%- comment -%} PDF always shown below the video (or alone if no video) {%- endcomment -%}
 <object data="/assets/pdf/juhaim_thesis.pdf" type="application/pdf" width="100%" height="750px">
   <p>Unable to display PDF file. </p>
 </object>
+
