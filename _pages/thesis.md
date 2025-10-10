@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /mscthesis/
-title: MSc Thesis
-description: Materials for courses you taught. Replace this text with your description.
+title: thesis
+description: Unsupervised Representation learning for spatial transcriptomics
 nav: true
 nav_order: 3
 ---
