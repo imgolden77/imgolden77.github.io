@@ -528,24 +528,6 @@ footer.sticky-bottom {
   }
 }
 
-/* PDF viewer styling to prevent right-offset rendering */
-.cv-pdf-wrapper {
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  /* avoid horizontal scroll from embedded PDF */
-}
-
-.pdf-viewer {
-  display: block;
-  /* ensure it behaves like a block element */
-  width: 100% !important;
-  /* force full width within container */
-  max-width: 100%;
-  margin: 0 auto;
-  /* center if any extra width */
-}
-
 .table-cv-map {
   background-color: transparent;
   border: none;
