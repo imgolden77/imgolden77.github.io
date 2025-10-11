@@ -191,6 +191,14 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  - _projects/2_projects.md
+  - _projects/3_projects.md
+  - _projects/4_projects.md
+  - _projects/5_projects.md
+  - _projects/6_projects.md
+  - _projects/7_projects.md
+  - _projects/8_projects.md
+  - _projects/9_projects.md
 keep_files:
   - CNAME
   - .nojekyll
