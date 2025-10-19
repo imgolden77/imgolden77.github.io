@@ -20,16 +20,10 @@
             <td>
               {% if item.inline %}
                 {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+              {% elsif item.link %}
+                <a class="news-title" href="{{ item.link | relative_url }}">{{ item.title }}</a>
               {% else %}
-                {% assign current_page = page.url | default: page.permalink | downcase %}
-                {% assign title_lc = item.title | downcase %}
-                {% if current_page contains 'about' and title_lc contains 'thesis' %}
-                  <a class="news-title" href="{{ '/mythesis' | relative_url }}">{{ item.title }}</a>
-                {% elsif current_page contains 'about' and title_lc contains 'cv' %}
-                  <a class="news-title" href="{{ '/cv' | relative_url }}">{{ item.title }}</a>
-                {% else %}
-                  <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-                {% endif %}
+                <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
               {% endif %}
             </td>
           </tr>
