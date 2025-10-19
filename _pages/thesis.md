@@ -8,6 +8,7 @@ nav: true
 nav_order: 1
 cv_pdf: juhaim_thesis.pdf # you can also use external links here
 description: Unsupervised Representation learning for spatial transcriptomics
+github_url: https://github.com/imgolden77/Unsupervised-Representation-Learning-for-Spatial-Transcriptomics-.git
 toc:
     sidebar: left
 ---
