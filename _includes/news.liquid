@@ -25,6 +25,8 @@
                 {% assign title_lc = item.title | downcase %}
                 {% if current_page contains 'about' and title_lc contains 'thesis' %}
                   <a class="news-title" href="{{ '/thesis' | relative_url }}">{{ item.title }}</a>
+                {% if current_page contains 'about' and title_lc contains 'CV' %}
+                  <a class="news-title" href="{{ '/cv' | relative_url }}">{{ item.title }}</a>
                 {% else %}
                   <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
                 {% endif %}
