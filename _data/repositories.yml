@@ -1,10 +1,10 @@
 github_users:
-  - torvalds
   - imgolden77
 
 repo_description_lines_max: 2
 
 github_repos:
   - imgolden77/CNNvsTraditionalCVObject-Recognition
-  - imgolden77/CellPLM
-
+  - imgolden77/Unsupervised-Representation-Learning-for-Spatial-Transcriptomics-
+  - imgolden77/ETL-Pipeline-for-Ad-impression-Data-
+  - imgolden77/Relation-Classification-on-Semeval-2010-Task-8
